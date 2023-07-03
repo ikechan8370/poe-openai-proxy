@@ -16,6 +16,7 @@ type CompletionResponse struct {
 	Created int      `json:"created"`
 	Choices []Choice `json:"choices"`
 	Usage   Usage    `json:"usage"`
+	Model   string   `json:"model"`
 }
 type Usage struct {
 	PromptTokens     int `json:"prompt_tokens"`
@@ -35,9 +36,9 @@ type CompletionSSEResponse struct {
 	Object  string      `json:"object"`
 }
 type SSEChoice struct {
-	Delta        map[string]string  `json:"delta"`
-	FinishReason *string            `json:"finish_reason"`
-	Index        int                `json:"index"`
+	Delta        map[string]string `json:"delta"`
+	FinishReason *string           `json:"finish_reason"`
+	Index        int               `json:"index"`
 }
 type Delta struct {
 	Role    string `json:"role"`

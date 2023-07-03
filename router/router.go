@@ -152,6 +152,7 @@ func Ask(c *gin.Context, req poe.CompletionRequest, client *poe.Client) {
 			CompletionTokens: 0,
 			TotalTokens:      0,
 		},
+		Model: req.Model,
 	})
 }
 
